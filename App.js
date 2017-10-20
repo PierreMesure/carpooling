@@ -1,29 +1,77 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, Alert, StyleSheet, TextInput, View, Button } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hey Xinyi</Text>
-        <Text>Do you want some shrimps?</Text>
-          <Button
+export default class LaunchScreen extends Component {
 
-              title="Learn More"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-          />
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = {text: 'Try'};
+    }
+
+    _onPressButton() {
+        Alert.alert('Title', 'Message');
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+              <TextInput
+                  style={styles.textInputContainer}
+                  placeholder="Username"
+                  onChangeText={(text) => this.setState({text})}
+              />
+              <TextInput
+                  style={styles.textInputContainer}
+                  placeholder="Password"
+              />
+              <View style={styles.buttonContainer}>
+                <Button
+                    onPress={this._onPressButton}
+                    title={this.state.text}
+                />
+              </View>
+              <View style={styles.buttonContainer}>
+                <Button
+                    onPress={this._onPressButton}
+                    title="Press Me"
+                    color="#841584"
+                />
+              </View>
+              <View style={styles.alternativeLayoutButtonContainer}>
+                <Button
+                    onPress={this._onPressButton}
+                    title="This looks great!"
+                />
+                <Button
+                    onPress={this._onPressButton}
+                    title="OK!"
+                    color="#841584"
+                />
+              </View>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    buttonContainer: {
+        margin: 20
+    },
+    alternativeLayoutButtonContainer: {
+        margin: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    textInputContainer: {
+        margin: 60,
+        justifyContent: 'center',
+        backgroundColor:'green'
+    }
 });
+
+AppRegistry.registerComponent('AwesomeProject', () => LaunchScreen);
