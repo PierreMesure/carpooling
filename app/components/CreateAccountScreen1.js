@@ -7,46 +7,45 @@ export default class CreateAccountScreen1 extends Component {
       super(props);
   }
 
-  _onPressButton() {
-      Alert.alert('Title', 'Message');
-  }
-
   render() {
-      return (
-          <View style={styles.container}>
-            <Text style={styles.title}>
-              Create new account
+    const { navigate } = this.props.navigation;
+    return (
+        <View style={styles.container}>
+          <Text style={styles.title}>
+            Create new account
+          </Text>
+          <TextInput
+              style={styles.usernameTextInput}
+              placeholder='Username'
+          />
+          <TextInput
+              style={styles.passwordTextInput}
+              placeholder='Password'
+              secureTextEntry={true}
+          />
+          <TextInput
+              style={styles.passwordTextInput}
+              placeholder='Repeat password'
+              secureTextEntry={true}
+          />
+          <View style={styles.switchContainer}>
+            <Switch
+                style={styles.hasACarSwitch}
+                title='Test'
+            />
+            <Text style={styles.hasACarText}>
+              I do not have a car
             </Text>
-            <TextInput
-                style={styles.usernameTextInput}
-                placeholder='Username'
-            />
-            <TextInput
-                style={styles.passwordTextInput}
-                placeholder='Password'
-                secureTextEntry={true}
-            />
-            <TextInput
-                style={styles.passwordTextInput}
-                placeholder='Repeat password'
-                secureTextEntry={true}
-            />
-            <View style={styles.switchContainer}>
-              <Switch
-                  style={styles.hasACarSwitch}
-                  title='Test'
-              />
-              <Text style={styles.hasACarText}>
-                I do not have a car
-              </Text>
-            </View>
-            <Button
-                style={styles.nextButton}
-                onPress={this._onPressButton}
-                title='Next'
-            />
           </View>
-      );
+          <Button
+              style={styles.nextButton}
+              title='Next'
+              onPress={() =>
+                navigate('CreateAccount2')
+              }
+          />
+        </View>
+    );
   }
 }
 
