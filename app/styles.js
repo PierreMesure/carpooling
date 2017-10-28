@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
   },
   title: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 50,
+    fontWeight: '700',
     textAlign: 'center'
   },
   textInput: {
@@ -18,5 +19,14 @@ export default StyleSheet.create({
   },
   button: {
     margin:20,
+    color: '#000000',
+  },
+  switchContainer: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  hasACarSwitch: {
+    margin: 20
   }
 });
