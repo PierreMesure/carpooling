@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   placeTextInput: {
+    fontSize: 30,
     margin: 20
   },
   searchButton: {
