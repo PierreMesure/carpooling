@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {Alert, StyleSheet, TextInput, Text, View, Button } from 'react-native';
+import {Alert, StyleSheet, TextInput, Text, View, Button, Slider } from 'react-native';
 
 export default class FindRideScreen extends Component {
 
 
   constructor(props) {
       super(props);
+      this.state = {timeRange: 0}
   }
 
   _onPressButton() {
@@ -15,17 +16,27 @@ export default class FindRideScreen extends Component {
   render() {
       return (
           <View style={styles.container}>
-            <Text style={styles.title}>
+{/*            <Text style={styles.title}>
               Find a ride
+            </Text> */}
+            <TextInput
+                style={styles.placeTextInput}
+                placeholder="Destination"
+            />
+            <Text style = {{fontSize: 15}}>
+              Departing from now:
             </Text>
-            <TextInput
-                style={styles.placeTextInput}
-                placeholder="Departure"
+            <Slider
+                  style={styles.slider}
+                  step={1}
+                  minimumValue={0}
+                  maximumValue={60} //minutes
+                  value={this.state.timeRange}
+                  onValueChange={timeRange => this.setState({ timeRange })}
             />
-            <TextInput
-                style={styles.placeTextInput}
-                placeholder="Arrival"
-            />
+            <Text style = {{fontSize: 20}}>
+              {this.state.timeRange} min
+            </Text>
             <Button
                 style={styles.searchButton}
                 onPress={this._onPressButton}
@@ -39,18 +50,20 @@ export default class FindRideScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    textAlign: 'center'
   },
   placeTextInput: {
-    textAlign: 'center',
     margin: 20
   },
   searchButton: {
     margin: 20
+  },
+  slider: {
+    width: 100,
   }
 });
