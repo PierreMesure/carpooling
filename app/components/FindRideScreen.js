@@ -14,6 +14,7 @@ export default class FindRideScreen extends Component {
   }
 
   render() {
+      const { navigate } = this.props.navigation;
       return (
           <View style={styles.container}>
 {/*            <Text style={styles.title}>
@@ -39,8 +40,10 @@ export default class FindRideScreen extends Component {
             </Text>
             <Button
                 style={styles.searchButton}
-                onPress={this._onPressButton}
                 title="Search"
+                onPress={() =>
+                  navigate('SearchResult')
+                }
             />
           </View>
       );
