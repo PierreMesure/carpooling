@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Alert, StyleSheet, TextInput, Text, Switch, View, Button } from 'react-native';
+import styles from '../styles.js';
 
 export default class CreateAccountScreen1 extends Component {
 
@@ -15,16 +16,16 @@ export default class CreateAccountScreen1 extends Component {
             Create new account
           </Text>
           <TextInput
-              style={styles.usernameTextInput}
+              style={styles.textInput}
               placeholder='Username'
           />
           <TextInput
-              style={styles.passwordTextInput}
+              style={styles.textInput}
               placeholder='Password'
               secureTextEntry={true}
           />
           <TextInput
-              style={styles.passwordTextInput}
+              style={styles.textInput}
               placeholder='Repeat password'
               secureTextEntry={true}
           />
@@ -33,12 +34,12 @@ export default class CreateAccountScreen1 extends Component {
                 style={styles.hasACarSwitch}
                 title='Test'
             />
-            <Text style={styles.hasACarText}>
+            <Text style={styles.text}>
               I do not have a car
             </Text>
           </View>
           <Button
-              style={styles.nextButton}
+              style={styles.button}
               title='Next'
               onPress={() =>
                 navigate('CreateAccount2')
@@ -47,38 +48,4 @@ export default class CreateAccountScreen1 extends Component {
         </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  usernameTextInput: {
-    textAlign: 'center',
-    margin: 20
-  },
-  passwordTextInput: {
-    textAlign: 'center',
-    margin: 20
-  },
-  switchContainer: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  hasACarSwitch: {
-    margin: 20
-  },
-  hasACarText: {
-
-  },
-  nextButton: {
-    margin: 20,
-  }
-});
+};

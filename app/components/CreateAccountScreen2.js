@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Alert, StyleSheet, TextInput, Text, Switch, View, Button } from 'react-native';
+import styles from '../styles.js';
 
 export default class CreateAccountScreen2 extends Component {
 
@@ -7,7 +8,7 @@ export default class CreateAccountScreen2 extends Component {
     return 'https://www.vegvesen.no/kjoretoy/Kjop+og+salg/' +
            'Kj%C3%B8ret%C3%B8yopplysninger?registreringsnummer=';
   }
-  
+
   constructor(props) {
       super(props);
       this.state = {
@@ -75,62 +76,32 @@ export default class CreateAccountScreen2 extends Component {
             Add a car
           </Text>
           <TextInput
-              style={styles.licensePlateTextInput}
+              style={styles.textInput}
               placeholder='Enter your license plate'
               onChangeText={(licensePlate) => this.setState({licensePlate})}
           />
           <Button
-              style={styles.searchButton}
+              style={styles.button}
               onPress={this._onPressSearchButton}
               title='Search'
           />
           <View style={styles.container}>
-            <Text style={styles.characteristicsText}>
+            <Text style={styles.text}>
               Car model: {this.state.carModel}
             </Text>
-            <Text style={styles.characteristicsText}>
+            <Text style={styles.text}>
               Carbon emissions: {this.state.emissions} g/km
             </Text>
-            <Text style={styles.characteristicsText}>
+            <Text style={styles.text}>
               Fuel consumption: {this.state.consumption} L/km
             </Text>
           </View>
           <Button
-              style={styles.nextButton}
+              style={styles.button}
               onPress={this._onPressSearchButton}
               title='Next'
           />
         </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  licensePlateTextInput: {
-    textAlign: 'center',
-    margin: 20
-  },
-  switchContainer: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  characteristicsText: {
-    margin: 20
-  },
-  searchButton: {
-    margin:20,
-  },
-  nextButton: {
-    margin: 20,
-  }
-});
+};

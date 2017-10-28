@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Alert, StyleSheet, TextInput, Text, View, Button } from 'react-native';
+import styles from '../styles.js';
 
 export default class LoginScreen extends Component {
 
@@ -19,23 +20,23 @@ export default class LoginScreen extends Component {
             Looplib
           </Text>
           <TextInput
-              style={styles.usernameTextInput}
+              style={styles.textInput}
               placeholder="Username"
           />
           <TextInput
-              style={styles.passwordTextInput}
+              style={styles.textInput}
               placeholder="Password"
               secureTextEntry={true}
           />
           <Button
-              style={styles.loginButton}
+              style={styles.button}
               title="Login"
               onPress={() =>
                 navigate('FindRide')
               }
           />
           <Button
-            style={styles.subText}
+            style={styles.text}
             title="Create a new account"
             onPress={() =>
               navigate('CreateAccount1')
@@ -44,27 +45,4 @@ export default class LoginScreen extends Component {
         </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  usernameTextInput: {
-    textAlign: 'center',
-    margin: 20
-  },
-  passwordTextInput: {
-    textAlign: 'center',
-    margin: 20
-  },
-  loginButton: {
-    margin: 20,
-  }
-});
+};
