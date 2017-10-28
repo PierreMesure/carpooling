@@ -29,8 +29,7 @@ export default class CreateAccountScreen1 extends Component {
               placeholder='Repeat password'
               secureTextEntry={true}
           />
-          <View style={styles.switchContainer}>
-            <Switch
+{/*            <Switch
                 style={styles.hasACarSwitch}
                 title='Test'
             />
@@ -38,6 +37,7 @@ export default class CreateAccountScreen1 extends Component {
               I do not have a car
             </Text>
           </View>
+          */}
           <Button
               style={styles.button}
               title='Next'

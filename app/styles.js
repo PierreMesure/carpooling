@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   title: {
-    fontSize: 50,
+    fontSize: 30,
     fontWeight: '700',
     textAlign: 'center'
   },

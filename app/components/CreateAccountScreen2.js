@@ -19,7 +19,9 @@ export default class CreateAccountScreen2 extends Component {
         numberOfSeats: 0
       }
   }
-
+  _onPressButton() {
+      Alert.alert('You are registered', "Validate your email!");
+  }
   _onPressSearchButton = () => {
         fetch(this.getVegvesenURL() + this.state.licensePlate, {
            method: 'GET'
@@ -98,8 +100,8 @@ export default class CreateAccountScreen2 extends Component {
           </View>
           <Button
               style={styles.button}
-              onPress={this._onPressSearchButton}
-              title='Next'
+              onPress={this._onPressButton}
+              title='Sign up'
           />
         </View>
     );
